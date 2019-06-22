@@ -25,14 +25,23 @@ Beyond code organization and attributes, testing becomes _much_ easier. A Saga m
 Redux Saga becomes most useful when API or other asynchronous calls are being made with complex flows in which calls depend on the next.
 
 **Pros**:
+
 → More readable code
+
 → Good for handling complex scenarios
+
 → Test cases become simple without necessity to mock the async behavior
+
 **Cons**:
+
 → Brings in more complexity to the code
+
 → Additional dependency
+
 → A lot of concepts to learn
+
 **Conclusion**:
+
 → Suited for complex async parts of the application that requires complex unit test cases
 
 ### A quick note on Thunks:
@@ -42,11 +51,17 @@ Given that Redux Saga seeks to orchestrate complex asynchronous operations with 
 Thunks add a layer of indirection for more flexibility, and pass dispatch functions to the function the action creator returns. This allows the component to be agnostic towards asking for a synchronous or asynchronous action.
 
 **Pros**:
+
 → Simple code to maintain
+
 **Cons**:
+
 → Struggles at handling complex scenarios
+
 → Async behavior needs mocking for test cases
+
 **Conclusion**:
+
 → Suited for small, straight forward async parts of the application
 
 ### Generators
@@ -55,11 +70,24 @@ Denoted with an `*`, generators make use of the `yield` keyword to pause the fun
 
 When a generator function is invoked, it returns an iterator object. Each subsequent `next()` method call will execute the generator until the next yield statement and pause.
 
-<script src="https://gist.github.com/irmerk/78b25ad6a4eb9408b741d9fa906e95ba.js"></script>
+```js
+function* testGenerator() {
+  const first = yield 'first yield value';
+  const second = yield 'second yield value';
+  return 'third returned value';
+}
+
+const test = testGenerator();
+
+console.log(test.next()); // { value: 'first yield value', done: false }
+console.log(test.next()); // { value: 'second yield value', done: false }
+console.log(test.next()); // { value: 'third returned value', done: true }
+console.log(test.next()); // { value: undefined, done: true }
+```
 
 ---
 
-### <a href='#walk'></a> Walkthrough:
+### <a name="walk"></a> Walkthrough:
 
 To guide through this concept, I will be referencing a codebase for the web app used by an open source software project I contribute to here:
 
@@ -100,7 +128,21 @@ The overall structure of the application’s flow of data will look akin to this
 
 To begin, we set up the main render of the app, and applying a store to the `Provider` given by [react-redux][reduxlink] :
 
-<script src="https://gist.github.com/irmerk/cc5600c96517f685dabb3d7c783b68e3.js"></script>
+```js
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+
+import MainApp from './containers/App';
+import store from './store';
+
+render(
+  <Provider store={store}>
+    <MainApp />
+  </Provider>,
+  document.querySelector('#root')
+);
+```
 
 #### Store
 
@@ -108,7 +150,37 @@ Pulling in the `createSagaMiddleware` method from Redux Saga, we create `sagaMid
 
 Similar to the reducers, Sagas will be registered with a rootSaga. Having the middleware use the rootSaga allows actions being dispatched to be successful.
 
-<script src="https://gist.github.com/irmerk/e848a979469ff2176d2fef1a985e7499.js"></script>
+```js
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import logger from 'redux-logger';
+
+import templatesReducer from './reducers/templatesReducer';
+...
+import contractReducer from './reducers/contractReducer';
+import rootSaga from './sagas/rootSaga';
+
+const sagaMiddleware = createSagaMiddleware();
+const middlewares = [sagaMiddleware];
+
+if (process.env.NODE_ENV === 'development') {
+  middlewares.push(logger);
+}
+
+const rootReducer = combineReducers({
+  templatesState: templatesReducer,
+  ...
+  contractState: contractReducer,
+});
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(...middlewares),
+);
+sagaMiddleware.run(rootSaga);
+
+export default store;
+```
 
 #### Sagas
 
@@ -120,13 +192,94 @@ Sagas are broken down to the root, watchers, and workers. All other Sagas you wr
 
 All Sagas will be registered with a root Saga. Combined in an `all()` function, they are allowed to all start at the same time each time.
 
-<script src="https://gist.github.com/irmerk/ed6ab3c583a501e6e1dd928677471737.js"></script>
+```js
+import { all } from 'redux-saga/effects';
+import { templatesSaga } from './templatesSaga';
+import { modelSaga } from './modelSaga';
+import { logicSaga } from './logicSaga';
+import { sampleSaga } from './sampleSaga';
+
+/**
+ * saga to yield all others
+ */
+export default function* rootSaga() {
+  yield all([...templatesSaga, ...modelSaga, ...logicSaga, ...sampleSaga]);
+}
+```
 
 ##### → Watcher
 
 Allowing the Saga to know when to start, this generator function watches for actions (_similar to reducers_) and calls worker Sagas to do an API call. This function is on `Line 62` below:
 
-<script src="https://gist.github.com/irmerk/884913996eeaad0ff54cfd1aae90bf09.js"></script>
+```js
+import { TemplateLibrary, Template } from '@accordproject/cicero-core';
+import { version as ciceroVersion } from '@accordproject/cicero-core/package.json';
+import { takeLatest, put, select, takeEvery } from 'redux-saga/effects';
+
+import * as actions from '../actions/templatesActions';
+import * as selectors from '../selectors/templatesSelectors';
+
+/**
+ * worker saga
+ * saga to populate store with templates
+ */
+export function* pushTemplatesToStore() {
+  try {
+    const templateLibrary = new TemplateLibrary();
+    const templateIndex = yield templateLibrary.getTemplateIndex({
+      latestVersion: false,
+      ciceroVersion,
+    });
+    const templateIndexArray = Object.values(templateIndex);
+    yield put(actions.getTemplatesSuccess(templateIndexArray));
+  } catch (err) {
+    yield put(actions.getTemplatesError(err));
+  }
+}
+
+/**
+ * worker saga
+ * saga which puts a mock template onto the array
+ * of templates in the store
+ */
+export function* addNewTemplateToStore() {
+  const newTemplate = {
+    uri: `${Date.now()}`,
+    name: 'Temporary New Template',
+    version: '1.0.0',
+    description:
+      'This is mock data to showcase an action to add a new template.',
+  };
+  yield put(actions.addNewTemplateSuccess(newTemplate));
+}
+
+/**
+ * worker saga
+ * saga which checks if template is in the store
+ * and loads the template if it is not
+ */
+export function* addTemplateObjectToStore(action) {
+  const templateObjects = yield select(selectors.templateObjects);
+
+  if (!templateObjects || !templateObjects[action.uri]) {
+    try {
+      const templateObj = yield Template.fromUrl(action.uri);
+      yield put(actions.loadTemplateObjectSuccess(action.uri, templateObj));
+    } catch (err) {
+      yield put(actions.loadTemplateObjectError(err));
+    }
+  }
+}
+
+/**
+ * watcher saga
+ */
+export const templatesSaga = [
+  takeLatest('GET_AP_TEMPLATES', pushTemplatesToStore),
+  takeLatest('ADD_NEW_TEMPLATE', addNewTemplateToStore),
+  takeEvery('LOAD_TEMPLATE_OBJECT', addTemplateObjectToStore),
+];
+```
 
 Similar to `takeLatest()`, `takeEvery()` allows multiple instances of Sagas to run simultaneously. These are both built on `take()`, which is synchronous.
 
@@ -138,13 +291,114 @@ This Saga (`Lines 14`, `31`, and `46` above) will perform a side effect. Once da
 
 Similar to actions, reducers are the same for Redux Saga. This is simply a function that takes state and action as arguments, and returns the next state of the app. While an action only describes what happened, a reducer describes _how the application’s state changes_.
 
-<script src="https://gist.github.com/irmerk/43031216eac8011f504c1994ca842cc2.js"></script>
+```js
+const initialState = {
+  templatesAP: [],
+  templateObjs: {},
+  error: null,
+};
+
+const GET_AP_TEMPLATES_SUCEEDED = 'GET_AP_TEMPLATES_SUCEEDED';
+const AP_TEMPLATES_ERROR = 'AP_TEMPLATES_ERROR';
+const ADD_NEW_TEMPLATE_SUCCEEDED = 'ADD_NEW_TEMPLATE_SUCCEEDED';
+const LOAD_TEMPLATE_OBJECT_SUCCEEDED = 'LOAD_TEMPLATE_OBJECT_SUCCEEDED';
+const LOAD_TEMPLATE_OBJECT_ERROR = 'LOAD_TEMPLATE_OBJECT_ERROR';
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_AP_TEMPLATES_SUCEEDED:
+      return { ...state, templatesAP: action.templates };
+    case ADD_NEW_TEMPLATE_SUCCEEDED:
+      return { ...state, templatesAP: [...state.templatesAP, action.template] };
+    case AP_TEMPLATES_ERROR:
+      return { ...state, error: action.error };
+    case LOAD_TEMPLATE_OBJECT_SUCCEEDED:
+      return {
+        ...state,
+        templateObjs: {
+          ...state.templateObjs,
+          [action.uri]: action.templateObj,
+        },
+      };
+    case LOAD_TEMPLATE_OBJECT_ERROR:
+      return { ...state, error: action.error };
+    default:
+      return state;
+  }
+};
+
+export default reducer;
+```
 
 #### Component
 
 Moving into the component, we have a straightforward approach to setting up state and dispatching to result in cleaner code.
 
-<script src="https://gist.github.com/irmerk/38a35588fd46784899f39674f1c96fc2.js"></script>
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { TemplateLibrary } from '@accordproject/cicero-ui';
+
+import {
+  getTemplatesAction,
+  addNewTemplateAction,
+} from '../../actions/templatesActions';
+
+const TLWrapper = styled.div`
+  ...;
+`;
+const mockAddToCont = input => {
+  console.log('addToCont: ', input);
+};
+const mockImport = () => {
+  console.log('import');
+};
+const mockUpload = () => {
+  console.log('upload');
+};
+
+export class LibraryComponent extends React.PureComponent {
+  componentDidMount() {
+    this.props.fetchAPTemplates();
+  }
+
+  render() {
+    return (
+      <TLWrapper>
+        <TemplateLibrary
+          templates={this.props.templates}
+          upload={mockUpload}
+          import={mockImport}
+          addTemp={this.props.addNewTemplate}
+          addToCont={mockAddToCont}
+        />
+      </TLWrapper>
+    );
+  }
+}
+
+LibraryComponent.propTypes = {
+  templates: PropTypes.array.isRequired,
+  addNewTemplate: PropTypes.func.isRequired,
+  fetchAPTemplates: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  templates: state.templatesState.templatesAP,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchAPTemplates: () => dispatch(getTemplatesAction()),
+  addNewTemplate: () => dispatch(addNewTemplateAction()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LibraryComponent);
+```
 
 #### Action Creator
 
@@ -154,7 +408,46 @@ With Sagas, actions are slightly different. Three actions happen for each API ca
 
 Beginning an action starts within the component, which may add necessary info for making the call. Worker Sagas will be dispatching success and error actions.
 
-<script src="https://gist.github.com/irmerk/fe217e4c2dec34ba7f6dbc8ba6ef0772.js"></script>
+```js
+export const getTemplatesAction = () => ({
+  type: 'GET_AP_TEMPLATES',
+});
+
+export const getTemplatesSuccess = templateIndexArray => ({
+  type: 'GET_AP_TEMPLATES_SUCEEDED',
+  templates: templateIndexArray,
+});
+
+export const getTemplatesError = error => ({
+  type: 'AP_TEMPLATES_ERROR',
+  error,
+});
+
+export const addNewTemplateAction = () => ({
+  type: 'ADD_NEW_TEMPLATE',
+});
+
+export const addNewTemplateSuccess = template => ({
+  type: 'ADD_NEW_TEMPLATE_SUCCEEDED',
+  template,
+});
+
+export const loadTemplateObjectAction = uri => ({
+  type: 'LOAD_TEMPLATE_OBJECT',
+  uri,
+});
+
+export const loadTemplateObjectSuccess = (uri, templateObj) => ({
+  type: 'LOAD_TEMPLATE_OBJECT_SUCCEEDED',
+  uri,
+  templateObj,
+});
+
+export const loadTemplateObjectError = error => ({
+  type: 'LOAD_TEMPLATE_OBJECT_ERROR',
+  error,
+});
+```
 
 #### Recap
 
@@ -181,11 +474,83 @@ This approach steps through yield effects individually with the `next()` method.
 
 A helper function called `recordSaga` is used to start a given saga outside the middleware with an action. The options object (`dispatch` and `getState`)is used to define behavior of side effects. `dispatch` fulfills put effects, and `dispatched` accumulates all the actions in a list and returns it after the Saga finishes.
 
-<script src="https://gist.github.com/irmerk/4a9a5a2d0d5e7420bcc21acd6c113fda.js"></script>
+```js
+import { runSaga } from 'redux-saga';
+
+/**
+ * saga to test independently
+ */
+export async function recordSaga(saga, initialAction, state) {
+  const dispatched = [];
+  await runSaga(
+    {
+      dispatch: action => dispatched.push(action),
+      getState: () => state,
+    },
+    saga,
+    initialAction
+  ).toPromise();
+
+  return dispatched;
+}
+```
 
 Utilizing `recordSaga` allows us to view the type of the dispatched action in a given test case.
 
-<script src="https://gist.github.com/irmerk/880ed492fed77886c731c80feb923c68.js"></script>
+```js
+import { TemplateLibrary } from '@accordproject/cicero-core';
+import { addNewTemplateToStore, pushTemplatesToStore } from '../templatesSaga';
+import { recordSaga } from '../../utilities/test/sagaTest';
+
+const mockedTemplateIndex = [
+  {
+    ciceroVersion: '^0.12.0',
+    description:
+      'This clause allows the receiver of goods to inspect them for a given time period after delivery.',
+    name: 'acceptance-of-delivery',
+    type: 1,
+    uri:
+      'ap://acceptance-of-delivery@0.11.0#311de48109cce10e6b2e33ef183ccce121886d0b76754d649d5054d1084f93cd',
+    url:
+      'https://templates.accordproject.org/archives/acceptance-of-delivery@0.11.0.cta',
+    version: '0.11.0',
+  },
+];
+
+jest.mock('@accordproject/cicero-core', () => ({
+  TemplateLibrary: jest.fn(),
+}));
+
+beforeEach(() => {
+  jest.resetModules();
+});
+
+describe('pushTemplatesToStore', () => {
+  it('should dispatch the action getTemplatesSuccess', async () => {
+    TemplateLibrary.mockImplementation(() => ({
+      getTemplateIndex: () => Promise.resolve(mockedTemplateIndex),
+    }));
+    const dispatched = await recordSaga(pushTemplatesToStore);
+    expect(dispatched[0].type).toEqual('GET_AP_TEMPLATES_SUCEEDED');
+  });
+
+  it('should dispatch an error if templates fetch fails', async () => {
+    TemplateLibrary.mockImplementation(() => ({
+      getTemplateIndex: () =>
+        Promise.reject(new Error('Unable to recieve templates')),
+    }));
+    const dispatched = await recordSaga(pushTemplatesToStore);
+    expect(dispatched[0].type).toContain('AP_TEMPLATES_ERROR');
+  });
+});
+
+describe('addNewTemplateToStore', () => {
+  it('should dispatch the action addNewTemplateSuccess', async () => {
+    const dispatched = await recordSaga(addNewTemplateToStore);
+    expect(dispatched[0].type).toEqual('ADD_NEW_TEMPLATE_SUCCEEDED');
+  });
+});
+```
 
 #### Integration Tests
 
@@ -195,7 +560,56 @@ This module contains `expectSaga` which returns an API for asserting that a Saga
 
 After calling `expectSaga` with assertions, start the Saga with `run()`. This returns a `Promise` which can then be used with a testing framework. We use Jest. If all assertions pass, the `Promise` will resolve.
 
-<script src="https://gist.github.com/irmerk/0bd972e6bbc04e510520be73943b3c54.js"></script>
+```js
+import { select } from 'redux-saga/effects';
+import { expectSaga } from 'redux-saga-test-plan';
+import { ModelManager } from 'composer-concerto';
+import { updateModelManagerSuccess } from '../../actions/modelActions';
+import { updateModelFileOnStore, validateModelFiles } from '../modelSaga';
+
+describe('validateModelFiles', () => {
+  it('should complete successful update to model manager', async () => {
+    const modelFiles = {
+      'test.cto': `
+                /**
+                 * This is a comment
+                 */
+    
+                namespace test
+    
+                asset Vehicle identified by vin {
+                  o String vin default="unknown"
+                }
+    
+                // this is another comment
+                participant Person identified by ssn {
+                  o String name
+                  o String ssn
+                  o DateTime dob
+                  --> Vehicle vehicle
+                }`,
+    };
+    const state = {
+      modelState: {
+        modelFiles,
+      },
+    };
+    const modelManager = new ModelManager();
+    Object.keys(modelFiles).forEach(fileName => {
+      modelManager.addModelFile(modelFiles[fileName], fileName, true);
+    });
+    modelManager.updateExternalModels();
+    modelManager.validateModelFiles();
+
+    return expectSaga(validateModelFiles)
+      .withState(state)
+      .put(updateModelManagerSuccess(modelManager))
+      .run();
+  });
+});
+```
+
+---
 
 ### Conclusion
 
@@ -203,14 +617,14 @@ Redux Saga is amazing. They provide a very clean way of performing asynchronous 
 
 Feel free to contact me with any questions or feedback.
 
-[sagalogo]: ./images/sagaLogo.png
+[sagalogo]: ../images/sagaLogo.png
 [walkthrough]: redux-saga.md#walk
 [thunklink]: https://github.com/reduxjs/redux-thunk
 [generatorlink]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*#Description
 [apsite]: https://www.accordproject.org/
 [apgithub]: https://github.com/accordproject
 [tsv2]: https://github.com/accordproject/template-studio-v2
-[sagadiagram]: ./images/sagaDiagram.png
+[sagadiagram]: ../images/sagaDiagram.png
 [reduxlink]: https://redux.js.org/
 [fairbank]: https://medium.com/u/be7a06b10aa3
 [sagatest]: https://redux-saga-test-plan.jeremyfairbank.com/
