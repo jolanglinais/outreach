@@ -5,10 +5,11 @@ Conference talks and blog posts.
 ### Previous work
 
 - [Asynchronous with Redux Sagas][reduxblog]
+- [Git Workflow Etiquette][gitblog]
 
 ### Current work
 
-- [Git Workflow Etiquette][gitblog]
+- [Modern Javascript Techniques][modernjs]
 
 ### Bio
 
@@ -16,5 +17,6 @@ Jolene is a full stack engineer at Clause, a legal tech startup, and a maintaine
 
 [reduxblog]: blog/redux-saga.md
 [gitblog]: blog/git-workflow.md
+[modernjs]: blog/modern-javascript.md
 [twitter]: https://twitter.com/jolanglinais
 [bloglink]: https://medium.com/@jolene.langlinais
