@@ -9,12 +9,19 @@ Version control with git provides for powerful collaboration, whether it be a ti
 Good quality software consists of, among other things, code which is robust, resilient, secure, and performant. These attributes are achievable by maintaining a foundation of good quality code and a solid history of documentation. Anyone should be able to join the process and easily figure out and track the status of the project. This is where git and [GitHub][github] come in.
 
 _Skip to the following_:
+
 → [Branch vs. Fork][branchfork]
+
 → [Rebase vs. Merge][rebasemerge]
+
 → [CLI][cli]
+
 → [Commit (Messages)][commitmsg]
+
 → [Pull Requests (and Reviews)][prreview]
+
 → [GitHub Issues][githubissue]
+
 → [Open Source][oss]
 
 #### Approach
@@ -34,7 +41,9 @@ The majority of my work at the Accord Project is in [JavaScript][jsref], with so
 **Pros**
 
 `+` All project work is centralized
+
 `+` Ease of collaboration
+
 `+` Single remote to handle
 
 **Cons**
@@ -46,13 +55,16 @@ The majority of my work at the Accord Project is in [JavaScript][jsref], with so
 **Pros**
 
 `+` Increased separation between user branches
+
 `+` Primary repository cleanliness
 
 **Cons**
 
 `—` Difficulty to track branches
- `—` Collaboration requires extra steps
- `—` Accessibility is lower for less experienced git users
+
+`—` Collaboration requires extra steps
+
+`—` Accessibility is lower for less experienced git users
 
 While there are benefits to both of these approaches, my general rule consists of forking in an open source project and branching in a smaller or insular team. There is more incentive for keeping the main repository clean and tidy in open source, and less chance of quick-and-dirty collaboration on a branch. Conversely, a tech team would benefit from a centralized repository with trackable branches. Either way will necessitate strict organization.
 
@@ -63,16 +75,21 @@ Naming a new branch will be one of the first steps in keeping a consistent track
 `name/issue-tracker/short-description`
 
 **`name`**: Anything from initials to full name to GitHub username
+
 **`issue-tracker`**: Reference the issue from GitHub or some other agile user stories source
+
 **`short-description`**: One to three words describing the main goal of this branch, separated by hyphens
 
 **Example**:
+
 `irmerk/issue7/new-feature`
 
 In the case of collaborating on a single feature, maintain a single, `master` branch for the feature and individual branches from it. This can follow the previous naming convention:
 
 `master/issue14/routing-service // team branch`
+
 `irmerk/issue14/routing-service // my branch`
+
 `someone/issue14/routing-service // someone else's branch`
 
 Personal branches can be merged into the `master` team branch, which will then be merged with the overall `master` through a [pull request][prreview]. Delete branches after they are merged.
@@ -207,7 +224,7 @@ Concise and consistent commit messages should be captured by always including th
 
 A properly formed `git commit` subject line should always be able to complete the following sentence:
 
-> _If applied, this commit will _**`your subject line here`**
+> If applied, this commit will **`your subject line here`**
 
 `type(scope): subject — footer`
 
