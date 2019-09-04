@@ -18,6 +18,18 @@ Conference talks and blog posts.
 
 - [JavaScript Streams with Highland][streamsblog]
 
+### Future ideas
+
+- Modern JavaScript: Variable Naming
+- Modern JavaScript: Modularization
+- Modern JavaScript: Destructuring and Spread
+- Modern JavaScript: Functional Programming
+- Career Transitions
+- Culinary to Code
+- Imposter Syndrome
+- OAuth
+- Mechanical Keyboards
+
 ### Bio
 
 Jolene is a full stack engineer at Clause, a legal tech startup, and a maintainer at the Accord Project. As a fan of functional programming and decentralized systems, Jolene loves developing efficient and beautiful systems. She can be found on [Twitter][twitter] and writing tech resources on her [DEV blog][devlink] or [Medium blog][bloglink].
