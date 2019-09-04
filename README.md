@@ -8,7 +8,7 @@ Conference talks and blog posts.
 
 - [Asynchronous with Redux Sagas][reduxblog]
 - [Git Workflow Etiquette][gitblog]
-- [Modern Javascript Techniques][modernjs]
+- [Modern Javascript Techniques][modernjsblog]
 
 #### Talk
 
@@ -16,7 +16,7 @@ Conference talks and blog posts.
 
 ### Current work
 
-- TBD
+- [JavaScript Streams with Highland][streamsblog]
 
 ### Bio
 
@@ -24,7 +24,8 @@ Jolene is a full stack engineer at Clause, a legal tech startup, and a maintaine
 
 [reduxblog]: blog/redux-saga.md
 [gitblog]: blog/git-workflow.md
-[modernjs]: blog/modern-javascript.md
+[modernjsblog]: blog/modern-javascript.md
+[streamsblog]: blog/highland-streams.md
 [twitter]: https://twitter.com/jolanglinais
 [devlink]: https://dev.to/irmerk
 [bloglink]: https://medium.com/@jolene.langlinais
