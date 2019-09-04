@@ -21,13 +21,21 @@ The Accord Project core codebase contains more than 250k lines of code. Along wi
 ## Outline:
 
 → [Approach][approach]
+
 → [Fundamentals][fundamentals]
+
 → [Workflow][workflow]
+
 → [Operations][operations]
+
 → [Functions][functions]
+
 → [Asynchronous][asynchronous]
+
 → [Functional Programming][functional]
+
 → [Conclusion][conclusion]
+
 → [Resources][resources]
 
 ---
@@ -413,9 +421,13 @@ const outsideRequest = async () => {
 
 Benefits:
 `+` Clarity - Less code and more readable.
+
 `+` Error handling - `try/catch` can handle both synchronous and asynchronous code
+
 `+` Conditionals - More straight forward handling of dynamic results
+
 `+` Debugging - Error stack traces are much easier to track
+
 `+` Await anything
 
 ---
@@ -425,8 +437,11 @@ Benefits:
 There are two major paradigms when it comes to programming, imperative and declarative. An imperative way to approach writing a function would be to explain each minute step of the process, whereas declarative takes the approach of expressing computational logic without describing specific flow.
 
 **Imperative**: How to do something
+
 _Example_: Instruct someone to bake a cake, step-by-step
+
 **Declarative**: What to do
+
 _Example_: Telling someone to bake a cake by describing a cake
 
 Functional programming is declarative. An intimidating and powerful programming paradigm, this treats computation as the evaluation of mathematical functions and avoids changing _[state](https://en.wikipedia.org/wiki/Program_state)_ and _[mutable](https://en.wikipedia.org/wiki/Immutable_object)_ data. Functions are first class entities in JavaScript, which means they are treated as values and can be used as data. Functions can be referred to from constants and variables, be passed as a parameter to other functions, and be returned as a result of a function.
@@ -448,6 +463,7 @@ In JavaScript, primitive data types are passed by value, whereas objects are pas
 #### Ramda
 
 ![Ramda.js][ramdalogo]
+
 An excellent library which provides extra utility to functional programming in JavaScript, making it easier to create code pipelines. All functions are automatically curried, which makes this library extremely useful. Their wiki has a helpful section to help you find "_[What Function Should I Use](https://github.com/ramda/ramda/wiki/What-Function-Should-I-Use)_"
 
 _[Currying](http://www.sitepoint.com/currying-in-functional-javascript/)_ gives us the ability to use higher order functions (ones which take functions as input and return functions) and closures to great effect. Instead of a function with multiple arguments, a curried function would be one which takes a single argument and returns a function that takes a single argument. These are strung together to create a pipeline.
