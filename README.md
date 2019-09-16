@@ -2,7 +2,7 @@
 
 Conference talks and blog posts.
 
-### Previous work
+## Previous work
 
 #### Blog
 
@@ -12,13 +12,13 @@ Conference talks and blog posts.
 
 #### Talk
 
-- Git Workflow Etiquette (Coming)
+- [Git Workflow Etiquette][streamsblog]
 
-### Current work
+## Current work
 
 - [JavaScript Streams with Highland][streamsblog]
 
-### Future ideas
+## Future ideas
 
 - Modern JavaScript: Variable Naming
 - Modern JavaScript: Modularization
@@ -35,7 +35,7 @@ Conference talks and blog posts.
 - OAuth
 - Mechanical Keyboards
 
-### Bio
+## Bio
 
 Jolene is a full stack engineer at Clause, a legal tech startup, and a maintainer at the Accord Project. As a fan of functional programming and decentralized systems, Jolene loves developing efficient and beautiful systems. She can be found on [Twitter][twitter] and writing tech resources on her [DEV blog][devlink] or [Medium blog][bloglink].
 
