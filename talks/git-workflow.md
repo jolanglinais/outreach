@@ -49,4 +49,4 @@ Fullstack Engineer at Clause and maintainer at the Accord Project
 [reactladies]: https://www.meetup.com/React-Ladies/events/264903247/
 [wwcberlin]: https://frontend.womenwhocode.dev/
 [queerjs]: https://queerjs.com/new-york
-[gitslides]: talks/slides/git-workflow.pdf
+[gitslides]: slides/git-workflow.pdf

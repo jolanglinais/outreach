@@ -12,7 +12,7 @@ Conference talks and blog posts.
 
 #### Talk
 
-- [Git Workflow Etiquette][streamsblog]
+- [Git Workflow Etiquette][gittalk]
 
 ## Current work
 
@@ -42,6 +42,7 @@ Jolene is a full stack engineer at Clause, a legal tech startup, and a maintaine
 [reduxblog]: blog/redux-saga.md
 [gitblog]: blog/git-workflow.md
 [modernjsblog]: blog/modern-javascript.md
+[gittalk]: talks/git-workflow.md
 [streamsblog]: blog/highland-streams.md
 [twitter]: https://twitter.com/jolanglinais
 [devlink]: https://dev.to/irmerk
