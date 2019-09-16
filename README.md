@@ -24,9 +24,14 @@ Conference talks and blog posts.
 - Modern JavaScript: Modularization
 - Modern JavaScript: Destructuring and Spread
 - Modern JavaScript: Functional Programming
+- Functional JavaScript: Elm
+- Contributing to Open Source
 - Career Transitions
 - Culinary to Code
+  - Mise en place
+- Improv Lessons
 - Imposter Syndrome
+- Lessons from Massage Therapist Reciprocation
 - OAuth
 - Mechanical Keyboards
 
