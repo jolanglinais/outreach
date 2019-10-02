@@ -45,4 +45,4 @@ Git workflow and collaboration from my experiential perspective with open source
 [reactladies]: https://www.meetup.com/React-Ladies/events/264903247/
 [wwcberlin]: https://frontend.womenwhocode.dev/
 [queerjs]: https://queerjs.com/new-york
-[gitslides]: slides/git-workflow-powerpoint.ppt
+[gitslides]: slides/git-workflow-powerpoint-outreach.ppt
