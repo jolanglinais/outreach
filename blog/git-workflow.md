@@ -134,7 +134,7 @@ My recommendation for a general workflow:
 ```shell
 git checkout master
 git fetch --all --prune
-git merge --ff-only upstream/master
+git rebase upstream/master
 git push origin master
 ```
 
