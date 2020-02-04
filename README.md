@@ -17,23 +17,44 @@ Conference talks and blog posts.
 ## Current work
 
 - [JavaScript Streams with Highland][streamsblog]
+- [Year One Reflection][yearone]
+- [Improviser Lessons][improvlessons]
 
 ## Future ideas
+
+### Clause
+
+- Hiring Playbook
+- Pride Month (Diversity and Inclusion @ Clause)
+
+### Open Source
+
+- Contributing to Open Source
+
+### Work
+
+- Burnout Prevention
+- Remote Working
+
+### Personal
+
+- Mechanical Keyboards
+- Career Transitions
+- Culinary to Code
+  - Mise en place
+- Imposter Syndrome
+- Lessons from Massage Therapist Reciprocation
+
+### Code
 
 - Modern JavaScript: Variable Naming
 - Modern JavaScript: Modularization
 - Modern JavaScript: Destructuring and Spread
 - Modern JavaScript: Functional Programming
+- Functional JavaScript: Ramda
 - Functional JavaScript: Elm
-- Contributing to Open Source
-- Career Transitions
-- Culinary to Code
-  - Mise en place
-- Improv Lessons
-- Imposter Syndrome
-- Lessons from Massage Therapist Reciprocation
 - OAuth
-- Mechanical Keyboards
+- Big O
 
 ## Bio
 
@@ -42,8 +63,10 @@ Jolene is a full stack engineer at Clause, a legal tech startup, and a maintaine
 [reduxblog]: blog/redux-saga.md
 [gitblog]: blog/git-workflow.md
 [modernjsblog]: blog/modern-javascript.md
-[gittalk]: talks/git-workflow.md
 [streamsblog]: blog/highland-streams.md
+[yearone]: blog/year-one.md
+[improvlessons]: blog/improv-lessons.md
+[gittalk]: talks/git-workflow.md
 [twitter]: https://twitter.com/jolanglinais
 [devlink]: https://dev.to/irmerk
 [bloglink]: https://medium.com/@jolene.langlinais
