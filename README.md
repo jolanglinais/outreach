@@ -11,6 +11,7 @@ Conference talks and blog posts.
 - [Modern Javascript Techniques][modernjsblog]
 - [Year One Reflection][yearone]
 - [Pride 2020][pride]
+- [Bash CLI Readability][bashblog]
 
 #### Talk
 
@@ -67,6 +68,9 @@ Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech st
 [yearone]: blog/year-one.md
 [improvlessons]: blog/improv-lessons.md
 [pride]: blog/pride.md
+[bashblog]: blog/bash-profile.md
+
+
 [gittalk]: talks/git-workflow.md
 [talks]: talks
 [twitter]: https://twitter.com/jolanglinais
