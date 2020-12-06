@@ -1,7 +1,38 @@
-# Pride
+# Pride 2020
 
-Working...
+Written for [Clause](https://blog.clause.io/pride-2020/)
 
-- Transitioning while transitioning
-- LGBT in tech
-- Diversity and Inclusion @ Clause
+It is an important moment to share context around Pride origins, express our support of BLM, and make a public commitment to strive toward anti-racism.
+
+![Clause Pride 2020 Logo](../images/ClausePride2020.png)
+
+The first Pride was a riot. In June of 1969, patrons of Stonewall Inn fought back against police in a series of demonstrations that would become known as a critical moment in LGBT history. Today’s modern LGBT rights movement celebrates the legacies of Stonewall protesters like Marsha P. Johnson, a Black woman who self-identified as a transvestite and drag queen; Miss Major Griffin-Gracy, a Black trans woman; and Sylvia Rivera, a Latina who rejected gender labels. All three were sex workers as well as civil rights pioneers who dedicated their lives to activism, advocacy, and community liberation. The rebellion at Stonewall was led by people of color, queer and trans folks, sex workers, and other marginalized and disadvantaged people. It is disheartening to realize that, over fifty years later, vulnerable and criminalized populations are still fighting back against police brutality—and, in a cruel irony, their efforts are being met with even more brutality.
+
+The “gay liberation” movement of the ‘60s and ‘70s was influenced and inspired by the civil rights and Black Power movements. As was - you guessed it - [Black Lives Matter](https://en.wikipedia.org/wiki/Black_Lives_Matter) (BLM). The origins were in 2013, when three radical Black organizers — Alicia Garza, Patrisse Cullors, and Opal Tometi — created a Black-centered political will and movement building project, also influenced and inspired by the Black Power movements. The space BLM has held and continues to hold helped propel the conversation around the - you guessed it again - state-sanctioned violence they experienced: police brutality. Particularly highlighted are the egregious ways in which Black women, specifically Black trans women, are violated.
+
+Today, [Pride](https://en.wikipedia.org/wiki/Pride_parade) and BLM are inextricably linked. Even in the midst of a global pandemic, huge rallies have gathered in the wake of the murder of George Floyd to condemn police violence, demand justice for victims, and seek large-scale reform; some of these events have centered Black trans and gender non-conforming folks. On Sunday, the [Black Trans Lives Matter](https://www.cnn.com/2020/06/14/us/black-trans-protests/index.html) rally was held in New York City in response to the murders of two Black trans women, Dominique "Rem'Mie" Fells and Riah Milton.
+
+All this is to say: I feel that it is an important moment to express our support of BLM and to make a public commitment to strive toward anti-racism. As an employee of Clause who is also a transgender lesbian, I had already intended to write a blog post about how our company recognizes June as LGBT Pride month, but in light of current events, I felt more compelled than ever to speak out.
+
+Past and Present
+Clause is a small tech company based primarily in London and New York with team members who come from a variety of backgrounds and varying levels of formal/informal education. Although I have had an exceptionally positive experience at Clause, our company is not as diverse as it could be. We have very little racial or ethnic diversity among our staff, and our gender ratio is far from balanced. It is wonderfully affirming that our female employees feel welcomed and valued, but there is still progress to be made.
+
+It is tempting to make excuses and easy to shift the blame onto others or onto “the system.” But the uncomfortable truth is, we have fallen into the same trap that so many in our industry do. It is embarrassing to admit that we are not as diverse as we would like to be, but it is necessary to say it out loud, rather than denying it, as the first step in rectifying the situation.
+
+Speaking to my own experience, I was forced to drop out of university before receiving a degree, at which point I spent a few years in a number of entirely unrelated trades. I hesitated before embarking on my journey into the tech industry because I was very intimidated by its reputation for being overwhelmingly male/cisgender/straight with a formal education. I knew I did not fit the profile of the “typical” tech employee and I felt doubtful that I would fit in with the culture.
+
+Luckily, I have felt extremely accepted and embraced in my job. I have had opportunities to lead in many different aspects, including significant involvement in the Open Source project we contribute to, [Accord Project](https://www.accordproject.org/), implementation of standards around accessibility, git and GitHub etiquette, presentations, ownership of coding projects, and steering our approach to addressing diversity issues. I am extremely grateful for all of this and am well aware that not every organization would provide me with these opportunities. Keep in mind this is all in scope of my white privilege and perspective.
+
+Future Progress
+In the past few weeks, much of the discourse has been aimed at people who see themselves as bystanders, disconnected from or unaffected by racial justice issues. Activists who have been fighting this battle all along are calling on the rest of us to educate ourselves, make an intentional choice to change, and get involved. I am grateful toward them because they have opened my eyes. Although we as a company were already conscious of our shortcomings, we feel more acutely aware than ever. Lately we have been having new kinds of conversations and ramping up our discussions about diversity and inclusion.
+
+One concrete step we are taking is to partner with organizations to recruit using new and non-traditional methods. We have committed financial support to the [Black Girls CODE](https://www.blackgirlscode.com/) global movement as well as the [NAACP](https://www.naacp.org/) and [ACLU](https://www.aclu.org/), and I have personally established a sustained partnership with the global nonprofit [Women Who Code](https://www.womenwhocode.com/). This partnership consists of recruiting support as well as collaborating where we can to help support over 200,000 women around the world in their tech careers. We are actively searching through channels, posting in job boards specifically geared towards diversity, and strongly encouraging underrepresented people to apply to us. We are excitedly pursuing more partnerships and sponsorships going forward.
+
+Throughout my career, I have learned that we cannot rely on others to fix injustice for us. We need to lead the way, both as individuals and as a business, and we need to encourage those around us to do the same. As a small company, this is not an easy feat, and we still have a long way to go. We are still learning and figuring things out as we grow, but we are making progress. This progress, combined with the eagerness of Clause employees to embrace and encourage diversity, makes me proud to work at a company that seeks to be a catalyst for positive change in the tech industry.The stereotypical approach in the tech industry seems to be posting on a couple job boards, then throwing up your hands when diversity fails to conjure out of thin air and blaming it all on the “[pipeline problem](https://www.holloway.com/s/trh-excerpt-diversity-and-inclusion-in-tech-pt-1-foundations-myths-and-pitfalls)”. This passive approach perpetuates the current system; we feel it is our duty to correct existing imbalances by instead taking a proactive approach to change. Our intention is not to engage in a performative act of tokenism or to create a mere illusion of representation. It is not about meeting arbitrary quotas or playing a numbers game. It is about refusing to succumb to [diffusion of responsibility](https://en.wikipedia.org/wiki/Diffusion_of_responsibility) or perpetuate deeply entrenched patterns any longer. It is about choosing to disrupt “business as usual” and permanently change the way we do things.
+
+### Further Reading:
+[BUST: Pride Origins](https://bust.com/feminism/194711)
+[BBC: Stonewall - A riot that changed millions of lives](https://www.bbc.com/news/world-us-canada-48643756)
+[USAT: Why Pride owed to black trans women who threw bricks at cops](https://www.usatoday.com/story/opinion/voices/2019/06/24/pride-month-black-transgender-women-stonewall-marsha-p-johnson/1478200001/)
+[Amnesty International: Fifty years after Stonewall riots](https://www.amnesty.org/en/latest/campaigns/2019/06/stonewall-riots-50-year-anniversary/)
+
