@@ -15,6 +15,7 @@ Conference talks and blog posts.
 #### Talk
 
 - [Git Workflow Etiquette][gittalk]
+- [Miscellaneous][talks]
 
 ## Current work
 - [Improviser Lessons][improvlessons]
@@ -67,6 +68,7 @@ Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech st
 [improvlessons]: blog/improv-lessons.md
 [pride]: blog/pride.md
 [gittalk]: talks/git-workflow.md
+[talks]: talks
 [twitter]: https://twitter.com/jolanglinais
 [devlink]: https://dev.to/irmerk
 [bloglink]: https://medium.com/@jolene.langlinais

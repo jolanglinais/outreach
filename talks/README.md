@@ -1,8 +1,10 @@
 # Talks
 
+## [Git Workflow Etiquette](./git-workflow.md)
+
 ## Open Source
 
-### Open Source Contribution featuring Hacktoberfest
+### Open Source Contribution (feat. Hacktoberfest)
 - **Host**: [Women Who Code][wwc]
 - **Level**: Beginner
 - [**Recording**](https://youtu.be/KKNVB0H4QLE)
