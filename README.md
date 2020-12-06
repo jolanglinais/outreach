@@ -9,16 +9,15 @@ Conference talks and blog posts.
 - [Asynchronous with Redux Sagas][reduxblog]
 - [Git Workflow Etiquette][gitblog]
 - [Modern Javascript Techniques][modernjsblog]
+- [Year One Reflection][yearone]
+- [Pride 2020][pride]
 
 #### Talk
 
 - [Git Workflow Etiquette][gittalk]
 
 ## Current work
-
-- [Year One Reflection][yearone]
 - [Improviser Lessons][improvlessons]
-- [Pride][pride]
 - [JavaScript Streams with Highland][streamsblog]
 
 ## Future ideas
@@ -58,7 +57,7 @@ Conference talks and blog posts.
 
 ## Bio
 
-Jolene is a full stack engineer at Clause, a legal tech startup, and a maintainer at the Accord Project. As a fan of functional programming and decentralized systems, Jolene loves developing efficient and beautiful systems. She can be found on [Twitter][twitter] and writing tech resources on her [DEV blog][devlink] or [Medium blog][bloglink].
+Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech startup, and a maintainer and member of the Technical Steering Committee for the [Accord Project](https://accordproject.org/). As a fan of functional programming and decentralized systems, Jolene loves developing efficient and beautiful systems. She can be found on [Twitter][twitter] and writing tech resources on her [DEV blog][devlink] or [Medium blog][bloglink].
 
 [reduxblog]: blog/redux-saga.md
 [gitblog]: blog/git-workflow.md
