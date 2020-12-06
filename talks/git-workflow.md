@@ -35,14 +35,20 @@ Git workflow and collaboration from my experiential perspective with open source
 - [**QueerJS**][queerjs]
   - Date: November 2, 2019
   - Location: New York, NY
+- [All Things Open][ato]
+  - Date: October 20, 2020
+  - Location: Remote
 
 ### [Slides][gitslides]
 
 ### Recordings
 
-- Coming
+- [All Things Open 2020][atoTalk]
 
 [reactladies]: https://www.meetup.com/React-Ladies/events/264903247/
 [wwcberlin]: https://frontend.womenwhocode.dev/
 [queerjs]: https://queerjs.com/new-york
 [gitslides]: slides/git-workflow-powerpoint-outreach.ppt
+
+[ato]: https://2020.allthingsopen.org/
+[atoTalk]: https://www.youtube.com/watch?v=8HH_BtA9L5U
