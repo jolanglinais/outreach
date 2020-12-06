@@ -12,6 +12,7 @@ Conference talks and blog posts.
 - [Year One Reflection][yearone]
 - [Pride 2020][pride]
 - [Bash CLI Readability][bashblog]
+- [GitHub Clones Replenish][gitreplenishblog]
 
 #### Talk
 
@@ -69,6 +70,7 @@ Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech st
 [improvlessons]: blog/improv-lessons.md
 [pride]: blog/pride.md
 [bashblog]: blog/bash-profile.md
+[gitreplenishblog]: blog/github-replenish.md
 
 
 [gittalk]: talks/git-workflow.md
