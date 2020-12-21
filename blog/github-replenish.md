@@ -35,7 +35,7 @@ bash ./<SCRIPT_NAME>.sh INSERT_GITHUB_ORGANIZATION
 My configuration within this `scriptName.sh` file in order to clone **all** repositories within an organization:
 ```sh
 #!/bin/bash
-CURRENTDATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+CURRENTDATE=$(date -u +"%Y-%m-%dT%H%M%SZ")
 repositories=(`gh api /orgs/$1/repos --paginate | jq -r '.[]' |  tr '\n' '  '`)
 
 mkdir "${CURRENTDATE}"
@@ -57,7 +57,7 @@ done
 My configuration within this `scriptName.sh` file in order to clone **only** repositories within an organization that have specific prefixes, are archived, and are private:
 ```sh
 #!/bin/bash
-CURRENTDATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+CURRENTDATE=$(date -u +"%Y-%m-%dT%H%M%SZ")
 repositories=(`gh api /orgs/$1/repos --paginate | jq -r '.[] | select(.private == <BOOLEAN> and .archived == <BOOLEAN>) | .name | select(test("<PREFIX_1>") or test("<PREFIX_2>"))' |  tr '\n' '  '`)
 
 mkdir "${CURRENTDATE}"
