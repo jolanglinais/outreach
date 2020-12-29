@@ -13,6 +13,7 @@ Conference talks and blog posts.
 - [Pride 2020][pride]
 - [Bash CLI Readability][bashblog]
 - [GitHub Clones Replenish][gitreplenishblog]
+- [JavaScript Utility Libraries][jsutils]
 
 #### Talk
 
@@ -71,6 +72,7 @@ Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech st
 [pride]: blog/pride.md
 [bashblog]: blog/bash-profile.md
 [gitreplenishblog]: blog/github-replenish.md
+[jsutils]: blog/js-utility-libraries.md
 
 
 [gittalk]: talks/git-workflow.md
