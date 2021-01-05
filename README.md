@@ -14,6 +14,7 @@ Conference talks and blog posts.
 - [Bash CLI Readability][bashblog]
 - [GitHub Clones Replenish][gitreplenishblog]
 - [JavaScript Utility Libraries][jsutils]
+- [Agile Improv][agileimprov]
 
 #### Talk
 
@@ -21,7 +22,7 @@ Conference talks and blog posts.
 - [Miscellaneous][talks]
 
 ## Current work
-- [Improviser Lessons][improvlessons]
+
 - [JavaScript Streams with Highland][streamsblog]
 
 ## Future ideas
@@ -68,7 +69,7 @@ Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech st
 [modernjsblog]: blog/modern-javascript.md
 [streamsblog]: blog/highland-streams.md
 [yearone]: blog/year-one.md
-[improvlessons]: blog/improv-lessons.md
+[agileimprov]: blog/agile-improv.md
 [pride]: blog/pride.md
 [bashblog]: blog/bash-profile.md
 [gitreplenishblog]: blog/github-replenish.md
