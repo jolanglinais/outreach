@@ -32,7 +32,7 @@ The [Agile][agile] method of software engineering is a world-building exercise t
 
 Many of the skills valued by both improv and Agile come into play during the brainstorming process. A brainstorming session among colleagues requires a back-and-forth exchange of ideas and feedback. Programming is only possible when engineers are open to hearing new ideas—coding cannot progress if proposals are always struck down.
 
-Saying yes to an idea does not necessarily mean endorsing it as a great idea; it only means accepting the idea as valid and following it to see where it may lead. Great results can emerge even from poor suggestions. Even if suggestions don’t end up working out, making a habit of exploring them encourages collaborative sharing of ideas.
+Saying yes to an idea does not necessarily mean endorsing it as a _great_ idea; it only means accepting the idea as valid and following it to see where it may lead. No idea is great in and of itself—rather, a collection or evolution of ideas and the changes that result from them can lead to something great. Great results can emerge even from poor suggestions. Even if suggestions don’t end up working out, making a habit of exploring them encourages collaborative sharing of ideas.
 
 ### 3. Advance the scene
 
@@ -50,7 +50,7 @@ Veteran improviser Colin Mochrie said:
 
 In coding, like in improv (and everything else in life), mistakes are inevitable. Judging those who fail, including (and especially) yourself, is neither kind nor productive. Pushing past the discomfort of failure is essential for growth, and mistakes can often lead to revelatory discoveries.
 
-A supportive, encouraging workplace environment is one in which the whole team is thought to have collective ownership over the project—that means the successes as well as the failures. This is why a blameless culture is ideal, especially in [postmortems][postmortem]. In a culture where mistakes are forgiven, these experiences become lessons learned. Embracing a challenge turns an obstacle into an opportunity.
+A supportive, encouraging workplace environment is one in which the whole team is thought to have collective ownership over the project—that means the successes as well as the failures. This is why a blameless culture is ideal, especially in [postmortems][postmortem]. Blame is a variation of saying, "No": we cannot say what someone did was not supposed to happen because there is no such thing in reality as 'supposed to happen'. Blame is a wasted effort, like regret. In a culture where mistakes are forgiven, these experiences become lessons learned. Embracing a challenge turns an obstacle into an opportunity.
 
 Improv host Aisha Tyler also attested to the valuable lessons taught by failure:
 
