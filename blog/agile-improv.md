@@ -1,4 +1,6 @@
-# Agile Improv 
+# Agile Improv
+
+![Agile Improv Logo Header Image][headerimg]
 
 ## The Principles of Improv
 
@@ -14,7 +16,7 @@ Improv isn’t easy, but its principles are simple. The only rules are:
 
 Active listening is an underrated and undervalued skill. We all know we should do it, but oftentimes we’re merely waiting for our turn to speak or rushing to assert our own ideas. Improvisation emphasizes paying attention, staying present, and interpreting intent.
 
-Listening to your teammates is perhaps the most important part of improv. Stephen Colbert, who got his start in improv, said: 
+Listening to your teammates is perhaps the most important part of improv. Stephen Colbert, who got his start in improv, said:
 
 > “_There are very few rules to improvisation, but one of the things I was taught early on is that you are not the most important person in the scene. Everybody else is. And if they are the most important people in the scene, you will naturally pay attention to them and serve them._”
 
@@ -42,7 +44,7 @@ In software engineering, finding the game is analogous to problem-solving. When 
 
 ## Mistakes As Opportunities
 
-Veteran improviser Colin Mochrie said: 
+Veteran improviser Colin Mochrie said:
 
 > “_Embracing failure is one of the beautiful things about improv. If the scene is going well, great. But if something goes wrong, sometimes it can be even better. So, it’s just basically relaxing and dealing with whatever is going wrong at that point._”
 
@@ -66,10 +68,11 @@ While thoughtful, deliberate action is ideal, environments and situations are al
 
 An improviser steps out on stage with only a few seconds’ worth of an idea in mind, never a whole scene. Similarly, no engineer begins with a flawless start-to-finish plan fully mapped out in their head. It takes the whole team to make a show.
 
-This is the human element shared by improv, programming, and any other collaborative team endeavor. Humans are not machines: we thrive on connection, interaction, and relationships. We work best when we embrace playfulness and fun. 
+This is the human element shared by improv, programming, and any other collaborative team endeavor. Humans are not machines: we thrive on connection, interaction, and relationships. We work best when we embrace playfulness and fun.
 
 Fun is fun because it is in-the-moment, free from domination of the over-analytical brain. Being in the moment feels liberating. It can be freeing to accept that you do not know what will happen next, to let go of expectations for how things are “supposed to” go.
 
+[headerimg]: ../images/AgileImprov.png
 [ucb]: https://en.wikipedia.org/wiki/Upright_Citizens_Brigade_Theatre
 [agile]: https://en.wikipedia.org/wiki/Agile_software_development
 [waterfall]: https://en.wikipedia.org/wiki/Waterfall_model
