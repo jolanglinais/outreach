@@ -68,7 +68,7 @@ The majority of my work at the Accord Project is in [JavaScript][jsref], with so
 
 While there are benefits to both of these approaches, my general rule consists of forking in an open source project and branching in a smaller or insular team. There is more incentive for keeping the main repository clean and tidy in open source, and less chance of quick-and-dirty collaboration on a branch. Conversely, a tech team would benefit from a centralized repository with trackable branches. Either way will necessitate strict organization.
 
-As an open source project, the Accord Project follows the fork workflow model. Still, the `master` branches should be kept in sync ([guide for syncing][syncguide]), and every feature, bug fix, release, or code change should occur in a different branch. This will be discussed more in the [next section][rebasemerge].
+As an open source project, the Accord Project follows the fork workflow model. Still, the `main` branches should be kept in sync ([guide for syncing][syncguide]), and every feature, bug fix, release, or code change should occur in a different branch. This will be discussed more in the [next section][rebasemerge].
 
 Naming a new branch will be one of the first steps in keeping a consistent tracking system of Issues, pull requests, and git history. The important factor here is consistency.
 
@@ -82,27 +82,27 @@ Naming a new branch will be one of the first steps in keeping a consistent track
 
 **Example**:
 
-`irmerk/issue7/new-feature`
+`irmerk/i7/new-feature`
 
-In the case of collaborating on a single feature, maintain a single, `master` branch for the feature and individual branches from it. This can follow the previous naming convention:
+In the case of collaborating on a single feature, maintain a single, `main` branch for the feature and individual branches from it. This can follow the previous naming convention:
 
-`master/issue14/routing-service // team branch`
+`main/i14/routing-service // team branch`
 
-`irmerk/issue14/routing-service // my branch`
+`irmerk/i14/routing-service // my branch`
 
-`someone/issue14/routing-service // someone else's branch`
+`someone/i14/routing-service // someone else's branch`
 
-Personal branches can be merged into the `master` team branch, which will then be merged with the overall `master` through a [pull request][prreview]. Delete branches after they are merged.
+Personal branches can be merged into the `main` team branch, which will then be merged with the overall `main` through a [pull request][prreview]. Delete branches after they are merged.
 
 ### <a name="rebaseMerge"></a> Rebase + Squash
 
-Common practice for teams is to squash or condense long commit message chains into one or a few commits before merging into `master`. This is useful when, like me, someone commits frequently and thus would clutter a git log. Squashing serves to maintain a readable git log.
+Common practice for teams is to squash or condense long commit message chains into one or a few commits before merging into `main`. This is useful when, like me, someone commits frequently and thus would clutter a git log. Squashing serves to maintain a readable git log.
 
-Prior to merging a feature branch into the main (`master`) branch, it should be rebased from the up-to-date `master`. A [pull request][prreview], discussed later, will be where all the commits of this branch are squashed down to a single buildable commit and merged into `master`. Rebasing essentially ports a branch (`master`) into your current branch by applying all of your commits on top of that branch (`master`), then replacing your branch with the revised version. This catches you up to a branch (`master`) by rewriting git history in your local git.
+Prior to merging a feature branch into the main (`main`) branch, it should be rebased from the up-to-date `main`. A [pull request][prreview], discussed later, will be where all the commits of this branch are squashed down to a single buildable commit and merged into `main`. Rebasing essentially ports a branch (`main`) into your current branch by applying all of your commits on top of that branch (`main`), then replacing your branch with the revised version. This catches you up to a branch (`main`) by rewriting git history in your local git.
 
-Think of it as moving your branch to the tip of `master` instead of having branched off from an earlier version of `master`.
+Think of it as moving your branch to the tip of `main` instead of having branched off from an earlier version of `main`.
 
-Instead of needing to heavily investigate individual commits from a branch, each merge commit to `master` should contain all the code for a feature or bug fix. This allows for a much easier investigation process.
+Instead of needing to heavily investigate individual commits from a branch, each merge commit to `main` should contain all the code for a feature or bug fix. This allows for a much easier investigation process.
 
 While squashing prior to rebasing reduces conflicts due to fewer steps of conflict resolution, it literally changes the history of the repository as documented on GitHub for everyone, and thus is not the most accurate representation. Rebasing before squashing retains the git log tidiness and you don’t change history prior to documenting it on GitHub.
 
@@ -128,21 +128,21 @@ However, if you frequently commit ongoing work, rebasing complications should be
 
 My recommendation for a general workflow:
 
-1. Ensure you are currently in `master`
+1. Ensure you are currently in `main`
    → If working in a `fork`, fetch:
 
 ```shell
-git checkout master
+git checkout main
 git fetch --all --prune
-git rebase upstream/master
-git push origin master
+git rebase upstream/main
+git push origin main
 ```
 
 → If working in a `branch`, pull:
 
 ```shell
-git checkout master
-git pull origin master
+git checkout main
+git pull origin main
 ```
 
 2. Create a new branch for your feature or bug fix
@@ -152,10 +152,10 @@ git checkout -b branchName
 ```
 
 3. Make changes with as many commits as necessary. The final commit should build and pass tests.
-4. Make sure your branch sits on top of `master` (as opposed to branch off a branch). This ensures the reviewer will need only minimal effort to integrate your work by fast-fowarding `master`
+4. Make sure your branch sits on top of `main` (as opposed to branch off a branch). This ensures the reviewer will need only minimal effort to integrate your work by fast-fowarding `main`
 
 ```shell
-git rebase upstream/master
+git rebase upstream/main
 ```
 
 5. If you have previously pushed your code to a remote branch, you will need to force push. If not, omit the -f tag.
@@ -164,7 +164,7 @@ git rebase upstream/master
 git push origin branchName -f
 ```
 
-6. Open a pull request in GitHub from this forked branch. Once this has been merged to `master`, remember to clear out your branch locally
+6. Open a pull request in GitHub from this forked branch. Once this has been merged to `main`, remember to clear out your branch locally
 
 ```shell
 git branch -D branchName
@@ -172,9 +172,9 @@ git branch -D branchName
 
 #### Merge
 
-As a non-destructive operation, merging can be nice. However, if the `master` you are working on is quite active, the git log can be polluted quickly by the extra commit created by a merge operation.
+As a non-destructive operation, merging can be nice. However, if the `main` you are working on is quite active, the git log can be polluted quickly by the extra commit created by a merge operation.
 
-While many developers are uncomfortable with rebasing and resort to merge `master` on top of their changes, merging is not always the best option. If merging locally instead of rebasing, at the very least squash a pull request to merge into `master` on GitHub. This allows for greater control of the commit messages in `master` for the git log.
+While many developers are uncomfortable with rebasing and resort to merge `main` on top of their changes, merging is not always the best option. If merging locally instead of rebasing, at the very least squash a pull request to merge into `main` on GitHub. This allows for greater control of the commit messages in `main` for the git log.
 
 ---
 
@@ -286,23 +286,37 @@ As discussed previously, rebasing prior to creating a PR is a good tidying habit
 #### Formatting
 
 ```md
-# Issue #20
+<!--- Provide a formatted commit message describing this PR in the Title above -->
+# Closes #<CORRESPONDING ISSUE NUMBER>
+<!--- Provide an overall summary of the pull request -->
 
 ### Changes
-
-- Change one
-  - Subchange one
-  - Subchange two
-- Change two
-- Theoretically this should be listing all the commit messages included in this PR
+<!--- More detailed and granular description of changes -->
+<!--- These should likely be gathered from commit message summaries -->
+- <ONE>
+- <TWO>
 
 ### Flags
+<!--- Provide context or concerns a reviewer should be aware of -->
+- <ONE>
+- <TWO>
 
-- Possible issues or holds for reviewers to note
+### Screenshots or Video
+<!--- Provide an easily accessible demonstration of the changes, if applicable -->
 
 ### Related Issues
+- Issue #<NUMBER>
+- Pull Request #<NUMBER>
 
-- Link any issues or pull requests relating to this
+### Author Checklist
+- [ ] Ensure you provide a [DCO sign-off](https://github.com/probot/dco#how-it-works) for your commits using the `--signoff` option of git commit.
+- [ ] Vital features and changes captured in unit and/or integration tests
+- [ ] Extend the documentation, if necessary
+- [ ] Merging to `main` from `fork:branchname`
+- [ ] Manual accessibility test performed
+    - [ ] Keyboard-only access, including forms
+    - [ ] Contrast at least WCAG Level A
+    - [ ] Appropriate labels, alt text, and instructions
 ```
 
 GitHub PRs are in Markdown
@@ -314,9 +328,9 @@ GitHub offers a useful option for a PR which is not ready to be reviewed quite y
 
 #### Reviews
 
-Setting a standard for PR reviews is important, and being thorough equally so. A reviewer is a guardian of the git history and code quality. This cannot be stressed enough. What seems obvious now will surely not be so in months’ or years’ time. Do not feel bad for requesting changes or having changes requested of you. It is better to have pristine code merged into `master` than to rush through out of desire to be done with a feature.
+Setting a standard for PR reviews is important, and being thorough equally so. A reviewer is a guardian of the git history and code quality. This cannot be stressed enough. What seems obvious now will surely not be so in months’ or years’ time. Do not feel bad for requesting changes or having changes requested of you. It is better to have pristine code merged into `main` than to rush through out of desire to be done with a feature.
 
-Strike a balance between the flow of getting PRs through and not holding up further edits or production, and maintaining quality. Every reviewer should make a judgment on whether an issue is sufficient enough to block a PR. However, anyone who contributes to the PR should not be reviewing what is merged into `master`. Keep a healthy separation between these roles. Generally, it is faster for the PR author to fix the code than for a reviewer to be involved.
+Strike a balance between the flow of getting PRs through and not holding up further edits or production, and maintaining quality. Every reviewer should make a judgment on whether an issue is sufficient enough to block a PR. However, anyone who contributes to the PR should not be reviewing what is merged into `main`. Keep a healthy separation between these roles. Generally, it is faster for the PR author to fix the code than for a reviewer to be involved.
 
 ---
 
@@ -328,6 +342,27 @@ Very easy to maintain, Issues should be used liberally. Any question, idea, or b
 
 Speaking of which, search through a project before opening an Issue. While duplicates can be easily closed, this is a courtesy to other contributors. Also, be thorough and provide as much context as possible. Maybe even take a moment to read the project’s documentation on contributing, they may have guidelines on formatting an Issue.
 
+Example feature request formatting of an Issue:
+
+```md
+<!--- Provide a general summary of the feature in the Title above -->
+# Feature Request 🛍️
+<!--- Provide an expanded summary of the feature -->
+
+## Use Case
+<!--- Tell us what feature we should support and what should happen -->
+
+## Possible Solution
+<!--- Not obligatory, but suggest an implementation -->
+
+## Context
+<!--- How has this issue affected you? What are you trying to accomplish? -->
+<!--- Providing context helps us come up with a solution that is most useful in the real world -->
+
+## Detailed Description
+<!--- Provide a detailed description of the change or addition you are proposing -->
+```
+
 #### Noise
 
 Stay mindful of what you are presenting for others to read. Is it worth their time? Avoid posting short, rushed answers or responses. Take the time to be worthwhile to yourself and others in your contributions. Provide as much context as possible while still being helpful. Too little and too much context are both quite awful.
@@ -336,7 +371,7 @@ If a significant amount of time has passed, send a gentle bump to reviewers. It 
 
 #### <a name="oss"></a> Open Source
 
-I recommend this [guide][ossguide] for contributing to open source. GitHub provides great functionalities which should be utilized for the best possible experience of contributing developers. Issues can be tagged for ease of navigation, protections can be enforced to prevent direct commits to `master`, and multiple reviewers can be required.
+I recommend this [guide][ossguide] for contributing to open source. GitHub provides great functionalities which should be utilized for the best possible experience of contributing developers. Issues can be tagged for ease of navigation, protections can be enforced to prevent direct commits to `main`, and multiple reviewers can be required.
 
 This guide is aimed at providing a framework which fosters a healthy, collaborative atmosphere. All of this can be applied and tweaked for any open source or proprietary tech team environment.
 
