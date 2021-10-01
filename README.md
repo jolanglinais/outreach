@@ -62,7 +62,7 @@ Conference talks and blog posts.
 
 ## Bio
 
-Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech startup, and a maintainer and member of the Technical Steering Committee for the [Accord Project](https://accordproject.org/). As a fan of functional programming and decentralized systems, Jolene loves developing efficient and beautiful systems. She can be found on [Twitter][twitter] and writing tech resources on her [DEV blog][devlink] or [Medium blog][bloglink].
+Jolene is a full stack engineer at [Auth0][auth0] and a maintainer and member of the Technical Steering Committee for the [Accord Project][ap]. As a fan of functional programming and decentralized systems, Jolene loves developing efficient and beautiful systems. She can be found on [Twitter][twitter] and writing tech resources on her [DEV blog][devlink] or [Medium blog][bloglink].
 
 [reduxblog]: blog/redux-saga.md
 [gitblog]: blog/git-workflow.md
@@ -75,7 +75,8 @@ Jolene is a full stack engineer at [Clause](https://clause.io/), a legal tech st
 [gitreplenishblog]: blog/github-replenish.md
 [jsutils]: blog/js-utility-libraries.md
 
-
+[auth0]: https://auth0.com/
+[ap]: https://accordproject.org/
 [gittalk]: talks/git-workflow.md
 [talks]: talks
 [twitter]: https://twitter.com/jolanglinais
