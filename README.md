@@ -15,6 +15,7 @@ Conference talks and blog posts.
 - [GitHub Clones Replenish][gitreplenishblog]
 - [JavaScript Utility Libraries][jsutils]
 - [Agile Improv][agileimprov]
+- [Contributing to Accord Project][contAP]
 
 #### Talk
 
@@ -70,6 +71,7 @@ Jolene is a full stack engineer at [Auth0][auth0] and a maintainer and member of
 [streamsblog]: blog/highland-streams.md
 [yearone]: blog/year-one.md
 [agileimprov]: blog/agile-improv.md
+[contAP]: blog/contribute-ap.md
 [pride]: blog/pride.md
 [bashblog]: blog/bash-profile.md
 [gitreplenishblog]: blog/github-replenish.md
