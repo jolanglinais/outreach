@@ -11,7 +11,7 @@ Conference talks and blog posts.
 - [Modern Javascript Techniques][modernjsblog]
 - [Year One Reflection][yearone]
 - [Pride 2020][pride]
-- [Bash CLI Readability][bashblog]
+- [Shell CLI Readability][shellblog]
 - [GitHub Clones Replenish][gitreplenishblog]
 - [JavaScript Utility Libraries][jsutils]
 - [Agile Improv][agileimprov]
@@ -73,7 +73,7 @@ Jolene is a full stack engineer, as well as a previous maintainer and member of 
 [agileimprov]: blog/agile-improv.md
 [contAP]: blog/contribute-ap.md
 [pride]: blog/pride.md
-[bashblog]: blog/bash-profile.md
+[shellblog]: blog/shell-profile.md
 [gitreplenishblog]: blog/github-replenish.md
 [jsutils]: blog/js-utility-libraries.md
 

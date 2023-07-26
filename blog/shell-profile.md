@@ -1,4 +1,4 @@
-# Bash CLI Readability
+# Shell CLI Readability
 
 ![Bash Shell Logo Header Image][headerImg]
 
@@ -8,7 +8,65 @@ This configuration helps make my command line interface a bit more readable and 
 - Running `git status` to see which branch you are in
 - Investigating _when_ you ran that one command a while ago
 
-## Context
+## Zsh
+
+### Context
+
+My setup is currently running macOS Ventura, using [iTerm2][iTerm2] with [Zsh][zsh].
+
+My command line appears as:
+
+![My Zsh Shell Command Prompt][zshImg]
+
+This is showing the current date and which directory I am in, as well as the git branch (if this is a git repository):
+
+```sh
+<DATE>@<TIME>[<WORKING_DIRECTORY>][<GIT_BRANCH>]:
+```
+
+### Configuration
+
+This customization can be done by editing an existing `~/.zshrc` file or creating one. My current `~/.zshrc`:
+
+```sh
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '%b'
+
+PROMPT='%F{#FE9A0A}%D%f%F{#09CAFF}@%f%T[%F{#0165F5}%~%f[%F{#78D236}${vcs_info_msg_0_}%f]: '
+```
+
+First section is for loading the version control system (git in this case) and displaying the branch.
+
+### Prompt Options
+
+Within the prompt:
+
+- `%F{}...%f`
+    - This formatting indicates the text in the `...` area will be of the color within the `{}`
+- `%F{#FE9A0A}%D%f`
+    - `%D` indicates a date format of `YY-MM-DD`
+- `%F{#09CAFF}@%f`
+    - This is only the character `@`
+- `%T`
+    - Indicates the 24 hour time in format `HH:MM`
+- `[`
+    - This is only the character `[`
+- `%F{#0165F5}%~%f`
+- `][`
+    - This is only the characters `][`
+- `%F{#78D236}${vcs_info_msg_0_}%f`
+    - `${vcs_info_msg_0_}` will display the current git branch
+- `]:`
+    - This is only the characters `]:`
+
+---
+
+## Bash
+
+### Context
 
 My setup is currently running macOS Catalina, using [iTerm2][iTerm2] with [Bash][Bash].
 
@@ -19,10 +77,10 @@ My command line appears as:
 This is showing the current date and which directory I am in, as well as the git branch (if this is a git repository):
 
 ```sh
-06.12.2020@13:50[current-directory][git-branch-name]:
+<DATE>@<TIME>[<WORKING_DIRECTORY>][<GIT_BRANCH>]:
 ```
 
-## Configuration
+### Configuration
 
 This customization can be done by editing an existing `~/.bashrc` or `~/.bash_profile` file, or creating one. This file needs to export `PS1`, which is the primary prompt. My current `~/.bash_profile`:
 
@@ -86,7 +144,7 @@ This `parse_git_dirty` function will cause the `...[git-branch-name]` section of
 - `x`: Files have been deleted from this branch
 - `!`: Files have been modified in this branch
 
-## Prompt Options
+### Prompt Options
 
 - `\d`: Date in “Weekday Month Date” format (e.g., `Tue May 26`)
 - `\D{format}`: Date in format passed in
@@ -147,7 +205,9 @@ Note that my `PS1` includes the following sections:
 
 [headerImg]: ../images/bashHeader.png
 [exampleImg]: ../images/bashExample.png
+[zshImg]: ../images/zshPic.png
 
 
 [iTerm2]: https://iterm2.com/
 [Bash]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+[zsh]: https://en.wikipedia.org/wiki/Z_shell
