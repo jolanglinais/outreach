@@ -1,5 +1,7 @@
 # PNK Stack Service
 
+![Node Template Logo Header Image][headerimg]
+
 **P**ostgreSQL, **N**ode, and **K**oa
 
 This acts as a guide for creating a relatively production ready backend micro-service, which can be customized to your needs.
@@ -35,7 +37,7 @@ Use whatever text editor / integrated development environment (IDE) you prefer. 
 
 For helpful VSCode keyboard shortcuts to incorporate into your workflow, see their [Tips and Tricks][vsctt].
 
-My suggestions for [VSCode extensions][vscext] and [keyboard shortcuts][vscext].
+My suggestions for [VSCode extensions][vscext] and [keyboard shortcuts][vscsht].
 
 ### Command Line Tools
 
@@ -152,6 +154,7 @@ multi-stage     <none>  ec0680eefe42    About a minute ago  300MB
     - [Top 8 Docker Best Practices for using Docker in Production ✅][techworld_with_nana]
     - [hexops/dockerfile][hexops]
 
+[headerimg]: ../images/nodeTemplate.png
 [repo]: https://github.com/irmerk/pnk-stack
 
 <!--Back-->
@@ -177,7 +180,8 @@ multi-stage     <none>  ec0680eefe42    About a minute ago  300MB
 [neo]: https://neovim.io/
 [emac]: https://www.spacemacs.org/
 [ehlix]: https://helix-editor.com/
-[vscext]: ../reference/vscode
+[vscsht]: ../reference/vscode.md#keyboard-shortcuts
+[vscext]: ../reference/vscode.md#extensions
 
 <!--Command Line Tools-->
 [brew]: https://brew.sh/
