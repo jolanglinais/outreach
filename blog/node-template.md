@@ -4,7 +4,7 @@
 
 **P**ostgreSQL, **N**ode, and **K**oa
 
-This acts as a guide for creating a relatively production ready backend micro-service, which can be customized to your needs.
+This acts as a guide for creating a relatively production ready backend micro-service, which can be customized to your needs. It already has error handling, logging, observability, rate limiting, graceful shutdown, a test file, and Docker optimizations.
 
 The reference template repository can be found at [`irmerk/pnk-stack`][repo]
 
