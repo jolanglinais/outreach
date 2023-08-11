@@ -8,14 +8,12 @@ This acts as a guide for creating a relatively production ready backend micro-se
 
 The reference template repository can be found at [`irmerk/pnk-stack`][repo]
 
-*ℹ️ Note*: This guide does not currently include PostgreSQL, but will in the future when I get back to it.
-
 ## Stack
 
 - [Node.js][node] with [TypeScript][ts]
     - [Koa][koa]
 - [PostgreSQL][psql]
-    - [Objection][objection]
+    - [Prisma.io][prisma]
 
 ## Setup
 
@@ -162,7 +160,7 @@ multi-stage     <none>  ec0680eefe42    About a minute ago  300MB
 [ts]: https://www.typescriptlang.org/
 [koa]: https://koajs.com/
 [psql]: https://www.postgresql.org/
-[objection]: https://vincit.github.io/objection.js/
+[prisma]: https://www.prisma.io/
 
 <!--Terminal Emulator-->
 [iterm]: https://iterm2.com/
