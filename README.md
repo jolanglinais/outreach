@@ -6,7 +6,7 @@ Conference talks and blog posts.
 
 #### Blog
 
-- [Node Stack Service][nodetemp]
+- [Node Service Template][nodetemp]
 - [ChatGPT Prompt Framework][gpt]
 - [Asynchronous with Redux Sagas][reduxblog]
 - [Git Workflow Etiquette][gitblog]
