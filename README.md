@@ -6,6 +6,8 @@ Conference talks and blog posts.
 
 #### Blog
 
+- [Node Stack Service][nodetemp]
+- [ChatGPT Prompt Framework][gpt]
 - [Asynchronous with Redux Sagas][reduxblog]
 - [Git Workflow Etiquette][gitblog]
 - [Modern Javascript Techniques][modernjsblog]
@@ -76,6 +78,8 @@ Jolene is a full stack engineer, as well as a previous maintainer and member of 
 [shellblog]: blog/shell-profile.md
 [gitreplenishblog]: blog/github-replenish.md
 [jsutils]: blog/js-utility-libraries.md
+[nodetemp]: blog/node-template.md
+[gpt]: blog/chatgpt-prompt.md
 
 [ap]: https://accordproject.org/
 [gittalk]: talks/git-workflow.md
